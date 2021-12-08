@@ -36,6 +36,8 @@ function SearchBar(props) {
         .map((val, key) => {
           return (
             <>
+{/* Agregar un estado, si el estado no tiene nada, return mensaje <h2> no tengo  resultado para ese termino  */}
+
                 <Job
                     logo={val.logo}
                     position={val.position}

@@ -46,9 +46,7 @@ h2 {
 }
 
 .job-container {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
+
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
     grid-gap: 20px;
@@ -64,9 +62,26 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 .job-container:hover {
 box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
-
-
 }
+
+.job-featured {
+  border-left: 5px solid  hsl(180, 29%, 50%);
+  border-radius: 10px;
+    display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+    grid-gap: 20px;
+  grid-auto-rows: 100px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 30px;
+    margin: 20px 50px;
+    transition: all 0.5s ease;
+    align-items : center;
+}
+
+.job-featured:hover {
+box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
+}
+
 
 .flex {
   display: flex;
