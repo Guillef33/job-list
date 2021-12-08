@@ -14,7 +14,7 @@ function Job (props) {
             </div>
             <div>
                 <div className="flex">
-                    <p>{company}</p>
+                    <p className="color-company">{company}</p>
                     <p className="featured">{JSON.stringify(featured)}</p>
                     <p className="isNew">{JSON.stringify(isNew)}</p>
 
