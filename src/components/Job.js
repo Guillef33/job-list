@@ -35,15 +35,15 @@ function Job(props) {
             {position}
           </h2>
         </div>
-        <div className="job-info flex">
+        <div className="job-info">
           <p>{postedAt} .</p>
           <p>{role} . </p>
           <p> {contract}</p>
         </div>
       </div>
-      <div className="isNew">
+      <div className="flex">
         {languages.map((lenguaje) => {
-          return <p className="flex">{lenguaje}</p>;
+          return <p className="language-badge ">{lenguaje}</p>;
         })}
         {/*  lenguajes.split(',') */}
         {/* Es un array entonces tenemos que recorrerlo con map */}

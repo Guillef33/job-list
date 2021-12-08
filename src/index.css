@@ -82,6 +82,23 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 box-shadow: rgba(100, 100, 111, 0.6) 0px 7px 29px 0px;
 }
 
+.job-info{
+  display: flex;
+  justify-content: space-between;
+      width: 300px;
+}
+
+.language-badge {
+  margin:0px 10px;
+  background-color: hsl(180, 29%, 50%);;
+  padding:5px 10px;
+  border-radius:50px;
+  color:white;
+  font-weight:bold;
+  text-transform: uppercase;
+  font-size:0.8em;  
+}
+
 
 .flex {
   display: flex;
