@@ -26,9 +26,9 @@ function Job(props) {
 
   const [state, setState] = useState("faceit");
 
-  // const SelectImage = (name) => {
-  //   setState(name);
-  // };
+  const SelectImage = (name) => {
+    setState(name);
+  };
 
   return (
     <div className={featured ? "job-featured" : "job-container"}>

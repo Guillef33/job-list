@@ -4,7 +4,6 @@ import faceit from "../components/images/faceit.svg";
 import insure from "../components/images/insure.svg";
 import loopStudios from "../components/images/loop-studios.svg";
 import manager from "../components/images/manage.svg";
-
 import myhome from "../components/images/myhome.svg";
 import photosnap from "../components/images/photosnap.svg";
 import shortly from "../components/images/shortly.svg";
