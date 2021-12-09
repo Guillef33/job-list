@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import data from "../data";
 import Job from './Job';
 
+
 function SearchBar(props) {
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -36,22 +37,22 @@ function SearchBar(props) {
         .map((val, key) => {
           return (
             <>
-{/* Agregar un estado, si el estado no tiene nada, return mensaje <h2> no tengo  resultado para ese termino  */}
+              {/* Agregar un estado, si el estado no tiene nada, return mensaje <h2> no tengo  resultado para ese termino  */}
 
-                <Job
-                    logo={val.logo}
-                    position={val.position}
-                    featured={val.featured}
-                    isNew={val.isNew}
-                    level={val.level}
-                    role={val.role}
-                    contract={val.contract}
-                    postedAt={val.postedAt}
-                    company={val.company}
-                    location={val.location}
-                    key={val.id}
-                    languages={val.languages}
-                />  
+              <Job
+                logo={val.logo}
+                position={val.position}
+                featured={val.featured}
+                isNew={val.isNew}
+                level={val.level}
+                role={val.role}
+                contract={val.contract}
+                postedAt={val.postedAt}
+                company={val.company}
+                location={val.location}
+                key={val.id}
+                languages={val.languages}
+              />
             </>
           );
         })}

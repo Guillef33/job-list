@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+
+// import account from "./images/account.svg";
+
+import { CompanyImages } from "../enum/Companies";
 
 // import ReactLogo from './logo.svg';
 
@@ -18,30 +22,34 @@ function Job(props) {
     languages,
   } = props;
 
+  const [state, setState] = useState("faceit");
+
+  // const SelectImage = (name) => {
+  //   setState(name);
+  // };
+
   return (
     <div className={featured ? "job-featured" : "job-container"}>
-      <div className="image">
-        <img src={`${logo}`} alt="cover" className="imageSize" />
+      <div className="company-image-wrapper">
+        <img src={CompanyImages[state]} alt="cover" className="imageSize" />
       </div>
       <div>
         <div className="flex">
           <p className="color-company">{company}</p>
-          {isNew && <p className="featured">FEATURED</p>}
+          {featured && <p className="featured">FEATURED</p>}
 
-          {featured && <p className="isNew">New! </p>}
+          {isNew && <p className="isNew">New! </p>}
         </div>
         <div>
-          <h2>
-            {position}
-          </h2>
+          <h2>{position}</h2>
         </div>
         <div className="job-info">
-          <p>{postedAt} .</p>
-          <p>{role} . </p>
-          <p> {contract}</p>
+          <p>{postedAt}</p>
+          <p>{role}</p>
+          <p>{contract}</p>
         </div>
       </div>
-      <div className="flex">
+      <div className="flex-languages">
         {languages.map((lenguaje) => {
           return <p className="language-badge ">{lenguaje}</p>;
         })}
