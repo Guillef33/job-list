@@ -24,16 +24,13 @@ function Job(props) {
 
 
 
-  const [state, setState] = useState("faceit");
+  const [photo, setPhoto] = useState(company.toLowerCase().split(" ").join("").split(".").join(""));
 
-  const SelectImage = (name) => {
-    setState(name);
-  };
 
   return (
     <div className={featured ? "job-featured" : "job-container"}>
       <div className="company-image-wrapper">
-        <img src={CompanyImages[state]} alt="cover" className="imageSize" />
+        <img src={CompanyImages[photo]} alt="cover" className="imageSize" />
       </div>
       <div>
         <div className="flex">

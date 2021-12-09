@@ -11,13 +11,13 @@ import airFilter from "../components/images/the-air-filter-company.svg";
 
 export const CompanyImages = {
   account: account,
-  eyecam: eyecam,
+  eyecamco: eyecam,
   faceit: faceit,
   insure: insure,
-  loopStudios: loopStudios,
+  loopstudios: loopStudios,
   manage: manage,
   myhome: myhome,
   photosnap: photosnap,
   shortly: shortly,
-  airFilter: airFilter
+  theairfiltercompany: airFilter,
 };
