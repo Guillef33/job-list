@@ -14,7 +14,7 @@ function SearchBar(props) {
                 <div>
                     <input
                         type="text"
-                        placeholder="Buscar ..."
+                        placeholder="Busca por posicion"
                         onChange={(event) => {
                         setSearchTerm(event.target.value);
                         }}
@@ -38,7 +38,6 @@ function SearchBar(props) {
           return (
             <>
               {/* Agregar un estado, si el estado no tiene nada, return mensaje <h2> no tengo  resultado para ese termino  */}
-
               <Job
                 logo={val.logo}
                 position={val.position}

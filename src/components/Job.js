@@ -22,6 +22,8 @@ function Job(props) {
     languages,
   } = props;
 
+
+
   const [state, setState] = useState("faceit");
 
   // const SelectImage = (name) => {

@@ -27,6 +27,11 @@ body {
   padding: 10px 20px;
 }
 
+.top-bar input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px hsl(180, 29%, 50%);
+}
+
 .top-bar button {
     border: none;
   padding: 10px 20px;
