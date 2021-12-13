@@ -19,6 +19,7 @@ function Job(props) {
     featured,
     postedAt,
     contract,
+    filterWithTags,
     languages,
   } = props;
 
@@ -50,7 +51,11 @@ function Job(props) {
       </div>
       <div className="flex-languages">
         {languages.map((lenguaje) => {
-          return <p className="language-badge ">{lenguaje}</p>;
+          return (
+          <p className="language-badge" onClick={(e) => filterWithTags()}>
+            {lenguaje}
+          </p>
+          )
         })}
         {/*  lenguajes.split(',') */}
         {/* Es un array entonces tenemos que recorrerlo con map */}
