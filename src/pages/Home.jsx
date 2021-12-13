@@ -53,7 +53,7 @@ const Home = () => {
 
     return (
         <>
-            <SearchBar FilterWithSearch={FilterWithSearch} />
+            <SearchBar FilterWithSearch={FilterWithSearch}  />
             {!state.filter && state.jobs.map ((val, key) => {
             return (
                 <Job

@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import data from "../data";
 import Job from "./Job";
 
-function SearchBar(FilterWithSearch) {
+function SearchBar({FilterWithSearch}) {  //destructuring
   // const [searchTerm, setSearchTerm] = useState("");
-
   return (
     <>
       <div className="top-bar">
