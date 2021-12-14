@@ -51,20 +51,45 @@ const Home = () => {
           })
     }
 
+     const filterWithTag = (e) => {
 
-    const filterWithTag = (e) => {
-    
-      const jobs = data.map((job => (
-        job.filter(language => language.includes('HTML')).map(filterHTMLJob => (
-        {filterHTMLJob}))) 
-      )
-            
-      setState ({
+     const htmlJobs = data.filter(e => {
+      if (e.languages === 'html')  {
+        console.log('html')
+        }
+      if (e.languages === 'js') {
+        console.log('js')
+      }
+      if (e.languages === 'python') {
+           console.log('python')
+      }
+      }
+     )
+     setState ({
       ...state,
-      JobFilter: jobs,
-      filter:true,
-      })
+      JobFilter: htmlJobs,
+      filter: true
+     })
     }
+
+    // const filterWithTag = (e) => {
+
+
+    
+      // const htmlJobs = data.map((job => (
+      //   job.filter(language => language.includes('HTML').map(filterHTMLJob => (
+      //   {filterHTMLJob}
+      //   )
+      //   ) 
+      // )
+      // )
+      
+      // setState ({
+      // ...state,
+      // JobFilter: jobs,
+      // filter:true,
+      // })
+      
      
       const removeFilters = () => {
           setState ({
