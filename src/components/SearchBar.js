@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import data from "../data";
 import Job from "./Job";
 
-function SearchBar({FilterWithSearch}) {  //destructuring
+function SearchBar({FilterWithSearch, removeFilters}) {  //destructuring
   // const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
@@ -17,7 +17,11 @@ function SearchBar({FilterWithSearch}) {  //destructuring
               FilterWithSearch(event.target.value);
             }}
           />
-          {/* <button type="submit" value="buscar" >Buscar</button> */}
+          <div>
+            {" "}
+            <label>Borrar filtros</label>
+            <input type="checkbox" onClick={removeFilters} />
+          </div>
         </div>
       </div>
     </>

@@ -51,9 +51,28 @@ const Home = () => {
           })
     }
 
-    /* Agregar una funcion a los tags */
 
-    const filterWithTag = () => {
+    const filterWithTag = (e) => {
+    
+      const jobs = data.map((job => (
+        job.filter(language => language.includes('HTML')).map(filterHTMLJob => (
+        {filterHTMLJob}))) 
+      )
+            
+      setState ({
+      ...state,
+      JobFilter: jobs,
+      filter:true,
+      })
+    }
+     
+      const removeFilters = () => {
+          setState ({
+          ...state,
+          filter:false,
+          })
+      }
+        
       //setear el filtrado en true
       // hacer un map de la data respecto al filtrado
       // guardar los datos filtrados en jobFilter
@@ -62,11 +81,11 @@ const Home = () => {
       // El boton setea el filtrado en falso
       // El boton que sea simplemente un boton que se renderiza o no si el filtro esta en true
       // Tambien podria condicionar la clase del boton, si tiene filtrado que se muestre con colores y si no tiene filtrado que se muestre en gris
-    }
+        
 
     return (
         <>
-            <SearchBar FilterWithSearch={FilterWithSearch}  />
+            <SearchBar FilterWithSearch={FilterWithSearch} removeFilters={removeFilters} filterWithTag={filterWithTag}  />
             {!state.filter && state.jobs.map ((val, key) => { // Si no tiene filtro, mostrar todos los Jobs
             return (
                 <Job
@@ -103,7 +122,8 @@ const Home = () => {
                   languages={val.languages}
                 />
                 )
-            })}    
+            })}   
+             
     </>
     )
 }
