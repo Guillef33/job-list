@@ -54,7 +54,7 @@ function Job(props) {
           return (
             <p key={id}
               className="language-badge"
-              onClick={(e) => filterWithTags()}>
+              onClick={() => filterWithTags()}>
               {lenguaje}
             </p>
           );

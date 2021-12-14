@@ -53,33 +53,27 @@ const Home = () => {
 
      const filterWithTag = (e) => {
 
-     const htmlJobs = data.map((job) => job.language.filter(e => {
-      if (e.languages.include('html'))  {
+     const htmlJobs = data.map((job) => job.language.filter(val => {
+      if (val.languages.include('html'))  {
         console.log('html')
-          setState ({
-          ...state,
-          JobFilter: htmlJobs,
-          filter: true
-          })
+        return val;
+
         }
-      if (e.languages.include('js')) {
+      if (val.languages.include('js')) {
         console.log('js')
-          setState ({
-          ...state,
-          JobFilter: htmlJobs,
-          filter: true
-          })
+         return val;
       }
       if (e.languages.include('python')) {
            console.log('python')
-            setState ({
-          ...state,
-          JobFilter: htmlJobs,
-          filter: true
-          })
+         return val;
       }
       }
      ))
+      setState ({
+      ...state,
+      JobFilter: htmlJobs,
+      filter: true
+      })
     }
 
     const removeFilters = () => {
@@ -101,7 +95,7 @@ const Home = () => {
 
     return (
         <>
-            <SearchBar FilterWithSearch={FilterWithSearch} removeFilters={removeFilters} filterWithTag={filterWithTag}  />
+            <SearchBar FilterWithSearch={FilterWithSearch} removeFilters={removeFilters} />
             {!state.filter && state.jobs.map ((val, key) => { // Si no tiene filtro, mostrar todos los Jobs
             return (
                 <Job
@@ -121,9 +115,10 @@ const Home = () => {
                 />
                 )
             })}    
-            {state.filter && state.jobFilter.map ((val, key) => { // Si no tiene filtro, mostrar todos los Jobs
+            {state.filter && state.jobFilter.map ((val, key) => { // Si tiene filtro, mostrar todos los Jobs
+            // if (val.includes(state.term)) { Aca quise agregar un condicional rendering
             return (
-                <Job
+                <Job  filterWithTag={filterWithTag} 
                   key={key}
                   logo={val.logo}
                   position={val.position}
@@ -138,6 +133,7 @@ const Home = () => {
                   languages={val.languages}
                 />
                 )
+
             })}   
              
     </>
