@@ -19,8 +19,8 @@ function SearchBar({FilterWithSearch, removeFilters, state, setState}) {  //dest
           />
 
           <button
-          className="removeBtn"
-            // className={state.filter ? "removeBtnBlue" : "removeBtnRed"}
+          // className="removeBtn"
+            className={state.filter ? "removeBtnBlue" : "removeBtnRed"}
             onClick={removeFilters}>
             Borra Filtros
           </button>

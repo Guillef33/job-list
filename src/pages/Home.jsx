@@ -7,12 +7,12 @@ import data from "../data";
 
 const Home = () => {
 
-    const [state, setState] = useState({
-        jobs: data,
-        filter: '',
-        term: '',
-        jobFilter: ''
-    });
+        const [state, setState] = useState({
+            jobs: data,
+            filter: '',
+            term: '',
+            jobFilter: ''
+        });
 
     const FilterWithSearch = (term) => {
       console.log('entro')
