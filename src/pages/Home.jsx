@@ -7,12 +7,12 @@ import data from "../data";
 
 const Home = () => {
 
-        const [state, setState] = useState({
-            jobs: data,
-            filter: '',
-            term: '',
-            jobFilter: ''
-        });
+    const [state, setState] = useState({
+        jobs: data,
+        filter: false,
+        term: '',
+        jobFilter: ''
+    });
 
     const FilterWithSearch = (term) => {
       console.log('entro')
@@ -95,7 +95,7 @@ const Home = () => {
 
     return (
         <>
-            <SearchBar FilterWithSearch={FilterWithSearch} removeFilters={removeFilters} />
+            <SearchBar FilterWithSearch={FilterWithSearch} removeFilters={removeFilters} filter={state.filter} />
             {!state.filter && state.jobs.map ((val, key) => { // Si no tiene filtro, mostrar todos los Jobs
             return (
                 <Job
