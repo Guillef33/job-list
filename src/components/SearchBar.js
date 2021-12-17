@@ -25,10 +25,10 @@ function SearchBar({FilterWithSearch, removeFilters, state, setState, filter}) {
             Borra Filtros
           </button>
         </div>
-        <div>
+        {/* <div>
           <label>Borrar filtros</label>
           <input type="checkbox" onClick={removeFilters} />
-        </div>
+        </div> */}
       </div>
     </>
   );

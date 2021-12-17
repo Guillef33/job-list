@@ -52,9 +52,11 @@ function Job(props) {
       <div className="flex-languages">
         {languages.map((lenguaje) => {
           return (
-            <p key={id}
+            <p
+              key={id}
               className="language-badge"
-              onClick={() => filterWithTags()}>
+              onClick={(e) => filterWithTags(lenguaje)}
+            >
               {lenguaje}
             </p>
           );

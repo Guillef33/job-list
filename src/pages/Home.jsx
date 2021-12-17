@@ -3,8 +3,6 @@ import SearchBar from '../components/SearchBar';
 import Job from '../components/Job';
 import data from "../data";
 
-
-
 const Home = () => {
 
     const [state, setState] = useState({
@@ -51,31 +49,25 @@ const Home = () => {
           })
     }
 
-     const filterWithTag = (e) => {
+     const filterWithTags = (languaje) => {
 
-     const htmlJobs = data.map((job) => job.language.filter(val => {
-      if (val.languages.include('html'))  {
-        console.log('html')
-        return val;
+      const jobFilter = data.filter((val) => {
+        if (languaje === '') {
+          console.log('No existe el lenguaje')
+          return val
+        } 
+        if (val.languages.includes(languaje)) {
+            return val;
+          }
+        })
 
-        }
-      if (val.languages.include('js')) {
-        console.log('js')
-         return val;
-      }
-      if (e.languages.include('python')) {
-           console.log('python')
-         return val;
-      }
-      }
-     ))
-      setState ({
-      ...state,
-      JobFilter: htmlJobs,
-      filter: true
-      })
-    }
-
+        setState ({
+        ...state,
+        jobFilter: jobFilter,
+        filter: true
+        })
+     }
+   
     const removeFilters = () => {
           setState ({
           ...state,
@@ -83,22 +75,13 @@ const Home = () => {
           })
       }
         
-      //setear el filtrado en true
-      // hacer un map de la data respecto al filtrado
-      // guardar los datos filtrados en jobFilter
-      // Y despues agregar un boton al lado del buscador para poder limpiar el filtrado
-      // Ese boton se podria mostrar si hay filtros
-      // El boton setea el filtrado en falso
-      // El boton que sea simplemente un boton que se renderiza o no si el filtro esta en true
-      // Tambien podria condicionar la clase del boton, si tiene filtrado que se muestre con colores y si no tiene filtrado que se muestre en gris
-        
-
     return (
         <>
             <SearchBar FilterWithSearch={FilterWithSearch} removeFilters={removeFilters} filter={state.filter} />
             {!state.filter && state.jobs.map ((val, key) => { // Si no tiene filtro, mostrar todos los Jobs
             return (
                 <Job
+                filterWithTags={filterWithTags}   
                   key={key}
                   logo={val.logo}
                   position={val.position}
@@ -118,7 +101,7 @@ const Home = () => {
             {state.filter && state.jobFilter.map ((val, key) => { // Si tiene filtro, mostrar todos los Jobs
             // if (val.includes(state.term)) { Aca quise agregar un condicional rendering
             return (
-                <Job  filterWithTag={filterWithTag} 
+                <Job  filterWithTags={filterWithTags} 
                   key={key}
                   logo={val.logo}
                   position={val.position}
